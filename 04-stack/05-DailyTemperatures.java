@@ -1,0 +1,20 @@
+// LC 739. Daily Temperatures
+// Approach: Monotonic decreasing stack of indices. Pop when current temp > stack top.
+// Time: O(n) | Space: O(n)
+import java.util.*;
+
+class DailyTemperatures {
+    public int[] dailyTemperatures(int[] temperatures) {
+        int n = temperatures.length;
+        int[] res = new int[n];
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < n; i++) {
+            while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
+                int idx = stack.pop();
+                res[idx] = i - idx;
+            }
+            stack.push(i);
+        }
+        return res;
+    }
+}
