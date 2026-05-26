@@ -16,3 +16,6 @@ class SubtreeOfAnotherTree {
         return isSame(p.left, q.left) && isSame(p.right, q.right);
     }
 }
+
+// Status : Accepted
+// Revision Status : Required

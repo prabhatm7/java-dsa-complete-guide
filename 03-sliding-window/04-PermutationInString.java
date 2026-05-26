@@ -1,6 +1,9 @@
 // LC 567. Permutation in String
 // Approach: Fixed-size sliding window of s1.length(). Compare frequency arrays.
 // Time: O(n) | Space: O(26)
+
+import java.util.Arrays;
+
 class PermutationInString {
     public boolean checkInclusion(String s1, String s2) {
         if(s1.length() > s2.length()) return false;
